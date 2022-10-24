@@ -37,12 +37,13 @@ def validate_data(values):
     in try statemend plus checks if there is 6 datum
     """
     try:
+        print([int(value) for value in values])
         if len(values) != 6:
             raise ValueError (
                 f"Exactly 6 values are required. You supplied {len(values)}"
             )
     except ValueError as e:
-        print(f"Error occured: {e}\n")
+        print(f"Error occured: {e}. Please try again\n")
 
 
 get_sales_data()
