@@ -26,7 +26,23 @@ def get_sales_data():
     print("e.g.: 12,38,45,12,4,21\n")
 
     data_str = input("Please enter your numbers and press Enter: ")
+    print("\n")
 
-    print(f"Data provided: {data_str}\n")
+    sales_data = data_str.split(",")
+    validate_data(sales_data)
+
+def validate_data(values):
+    """
+    Validates user input data and coverts strings to integers
+    in try statemend plus checks if there is 6 datum
+    """
+    try:
+        if len(values) != 6:
+            raise ValueError (
+                f"Exactly 6 values are required. You supplied {len(values)}"
+            )
+    except ValueError as e:
+        print(f"Error occured: {e}\n")
+
 
 get_sales_data()
